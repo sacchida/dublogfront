@@ -89,7 +89,7 @@ const Article = () => {
   
 
   return (
-    data ? (
+    data && (
       <div>
         <div className="post-header">
           <div class="header-content ps-5 pe-5">
@@ -106,10 +106,10 @@ const Article = () => {
         </div>
         <div
           className="container-fluid text-center"
-          style={{ marginTop: "5rem" }}
+          style={{ marginTop: "8rem" }}
         >
           <section className="row m-4 d-flex justify-content-evenly">
-            
+            <p className="col fw-bold float-start">{data[0].writer}</p>
             <div className="col">
               <span class="badge bg-warning text-dark text-uppercase fw-bold">
                 {data[0].category}
@@ -124,7 +124,7 @@ const Article = () => {
         </div>
         <div className="m-3">
           {
-            data[0].newContent ?
+            data[0].newContent &&
                 data[0].newContent.map((item) => {
                   if (item.type === "text") {
                     return (
@@ -145,12 +145,12 @@ const Article = () => {
                         </div>
                     )
                   }
-                }) : null
+                })
             }
         </div>
         <Footer />
       </div>
-    ) : null
+    )
   );
 };
 
