@@ -24,6 +24,7 @@ const Main = () => {
         fetch(apiURL)
             .then(resp => {
                 if (!resp.ok) {
+                    console.log(resp.json());
                     throw new Error("Error");
                 }
                 return resp.json();
@@ -48,6 +49,7 @@ const Main = () => {
                 console.log(temp);
             })
             .catch(err => {
+                
                 console.log(err);
             })
 
