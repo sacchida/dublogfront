@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "./Main";
 
 const Posts = () => {
-  const { data } useContext(UserContext);
+  const { data } = useContext(UserContext);
 
   useEffect(() => {
     console.log("Posts running useEffect...");
