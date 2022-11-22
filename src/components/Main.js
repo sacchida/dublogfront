@@ -36,11 +36,11 @@ const Main = () => {
                         'slug': item.attributes.art_slug,
                         'descr': item.attributes.art_descr === null ? " " : item.attributes.art_descr,
                         'date': item.attributes.createdAt,
-                        'img': "https://dunews.herokuapp.com" + item.attributes.art_img.data.attributes.url,
+                        'img': "https://dunews.herokuapp.com" + (item.attributes.art_img.data.attributes.url === null ? "" : item.attributes.art_img.data.attributes.url),
                         'category': item.attributes.category.data === null ? "All" : item.attributes.category.data.attributes.ctgy_name,
                         'category_slug': item.attributes.category.data === null ? "all" : item.attributes.category.data.attributes.ctgy_slug,
-                        'writer': item.attributes.writer.data.attributes.wr_name,
-                        'writer_photo': "https://dunews.herokuapp.com" + item.attributes.writer.data.attributes.wr_photo.data.attributes.url,
+                        'writer': item.attributes.writer.data.attributes.wr_name === null ? "NONE" : item.attributes.writer.data.attributes.wr_name,
+                        'writer_photo': "https://dunews.herokuapp.com" + (item.attributes.writer.data.attributes.wr_photo.data.attributes.url === null ? "" : item.attributes.writer.data.attributes.wr_photo.data.attributes.url),
                     };
                 });
                 setData(temp);
