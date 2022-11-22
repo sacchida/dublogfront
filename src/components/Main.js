@@ -57,14 +57,15 @@ const Main = () => {
         <>
             <Top />
             {
-                loading &&
-                <Loader/>
+                loading ?
+                <div ><Loader/></div> : null
+                
             }
-            { data &&
+            { data ?
                 <UserContext.Provider value={data}>
                     <Posts />
                     <Footer/>
-                </UserContext.Provider>
+                </UserContext.Provider> : null
             }
         </>
     );
